@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.WeatherApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:windowBackground">@color/dark_blue</item>
+        <item name="android:navigationBarColor">@color/dark_blue</item>
+<!--        <item name="android:colorPrimary">@color/primary</item>-->
+<!--        <item name="android:colorPrimaryVariant">@color/primary</item>-->
+<!--        <item name="android:colorOnPrimary">@color/white</item>-->
+<!--        &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
+<!--        <item name="android:colorSecondary">@color/primary</item>-->
+<!--        <item name="android:colorSecondaryVariant">@color/primary</item>-->
+<!--        <item name="android:colorOnSecondary">@color/black</item>-->
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/dark_blue</item>
+    </style>
+</resources>
