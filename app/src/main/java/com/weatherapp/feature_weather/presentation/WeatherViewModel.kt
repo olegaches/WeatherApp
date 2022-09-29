@@ -25,6 +25,8 @@ class WeatherViewModel @Inject constructor(
         loadWeatherInfo()
     }
 
+    // search binary
+
     fun loadWeatherInfo() {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true, error = null) }

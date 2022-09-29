@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Oleg/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_drop.xml" value="0.1545" />
+        <entry key="..\:/Users/Oleg/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_pressure.xml" value="0.1115" />
+        <entry key="..\:/Users/Oleg/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/ic_sunnyrainy.xml" value="0.1115" />
       </map>
     </option>
   </component>
