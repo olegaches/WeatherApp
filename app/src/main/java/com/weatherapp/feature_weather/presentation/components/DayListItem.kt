@@ -29,7 +29,6 @@ fun DayListItem(
         backgroundColor = if(isSelected)
             MaterialTheme.colors.secondary else MaterialTheme.colors.background,
         elevation = 10.dp
-//        border = BorderStroke(1.dp, MaterialTheme.colors.onBackground)
     ) {
         Text(
             modifier = Modifier.padding(8.dp),
