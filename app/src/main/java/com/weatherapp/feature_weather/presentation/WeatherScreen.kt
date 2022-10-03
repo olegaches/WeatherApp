@@ -46,6 +46,7 @@ fun WeatherScreen(
             ) {
                 if(state.error == null && !state.isLoading) {
                     item {
+                        Spacer(modifier = Modifier.height(6.dp))
                         state.weatherInfo?.let { DayList(it) }
                         Spacer(modifier = Modifier.height(16.dp))
                         WeatherCard(

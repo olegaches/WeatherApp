@@ -1,13 +1,19 @@
 package com.weatherapp.feature_weather.presentation.components
 
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
@@ -32,6 +38,7 @@ fun WeatherCard(
             backgroundColor = backgroundColor,
             shape = RoundedCornerShape(10.dp),
             modifier = modifier.padding(16.dp)
+                .animateContentSize { _, _ ->  },
         ) {
             Column(
                 modifier = Modifier
