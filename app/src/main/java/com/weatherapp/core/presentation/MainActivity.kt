@@ -9,7 +9,6 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import com.google.accompanist.systemuicontroller.rememberSystemUiController

@@ -20,6 +20,7 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.weatherapp.core.presentation.ui.theme.DarkBlue
 import com.weatherapp.core.presentation.ui.theme.DeepBlue
+import com.weatherapp.feature_weather.presentation.components.DayList
 import com.weatherapp.feature_weather.presentation.components.WeatherCard
 import com.weatherapp.feature_weather.presentation.components.WeatherForecast
 
@@ -43,13 +44,17 @@ fun WeatherScreen(
                     .fillMaxSize()
                     .background(DarkBlue)
             ) {
-                item {
-                    WeatherCard(
-                        state = state,
-                        backgroundColor = DeepBlue
-                    )
-                    Spacer(modifier = Modifier.height(16.dp))
-                    WeatherForecast(state = state)
+                if(state.error == null && !state.isLoading) {
+                    item {
+                        state.weatherInfo?.let { DayList(it) }
+                        Spacer(modifier = Modifier.height(16.dp))
+                        WeatherCard(
+                            state = state,
+                            backgroundColor = DeepBlue
+                        )
+                        Spacer(modifier = Modifier.height(16.dp))
+                        WeatherForecast(state = state)
+                    }
                 }
             }
 

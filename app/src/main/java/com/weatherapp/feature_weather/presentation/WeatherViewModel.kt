@@ -25,7 +25,9 @@ class WeatherViewModel @Inject constructor(
         loadWeatherInfo()
     }
 
-    // search binary
+    fun selectDay(dayNumber: Int) {
+        _state.update { it.copy( selectedDay = dayNumber) }
+    }
 
     fun loadWeatherInfo() {
         viewModelScope.launch {

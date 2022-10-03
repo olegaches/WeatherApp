@@ -3,10 +3,10 @@ package com.weatherapp.feature_weather.data.repository
 import com.weatherapp.R
 import com.weatherapp.core.util.Resource
 import com.weatherapp.core.util.UiText
-import com.weatherapp.feature_weather.data.mappers.toWeatherInfo
+import com.weatherapp.feature_weather.data.mappers.toWeatherDataMap
 import com.weatherapp.feature_weather.data.remote.WeatherApi
 import com.weatherapp.feature_weather.domain.repository.WeatherRepository
-import com.weatherapp.feature_weather.domain.weather.WeatherInfo
+import com.weatherapp.feature_weather.domain.weather.WeatherData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
@@ -18,13 +18,13 @@ class WeatherRepositoryImpl @Inject constructor(
     private val api: WeatherApi
 ): WeatherRepository {
 
-    override fun getWeatherData(latitude: Double, longitude: Double): Flow<Resource<WeatherInfo>> = flow {
+    override fun getWeatherData(latitude: Double, longitude: Double): Flow<Resource<Map<Int, List<WeatherData>>>> = flow {
         try {
             val data = api.getWeatherData(
                 latitude = latitude,
                 longitude = longitude,
                 timezone = Calendar.getInstance().timeZone.id
-            ).toWeatherInfo()
+            ).weatherData.toWeatherDataMap()
             emit(Resource.Success(data))
         }
         catch(e: HttpException) {

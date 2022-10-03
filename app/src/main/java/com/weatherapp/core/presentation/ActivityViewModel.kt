@@ -13,9 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ActivityViewModel @Inject constructor(
-    private val locationTracker: LocationTracker
-): ViewModel() {
+class ActivityViewModel @Inject constructor(): ViewModel() {
 
     private val _state = MutableStateFlow(ActivityState(isLoading = true))
     val state = _state.asStateFlow()
@@ -23,18 +21,4 @@ class ActivityViewModel @Inject constructor(
     fun confirmPermissions() {
         _state.value = ActivityState(isLoading = false, error = null)
     }
-//    fun getLocation() {
-//        viewModelScope.launch {
-//            locationTracker.getCurrentLocation()?.let {
-//
-//            } ?: kotlin.run {
-//                _state.emit(
-//                    ActivityState(
-//                        isLoading = false,
-//                        error = UiText.StringResource(R.string.geolocation_exception)
-//                    )
-//                )
-//            }
-//        }
-//    }
 }

@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.weatherapp.feature_weather.presentation.WeatherState
 import com.weatherapp.R
+import java.time.LocalDateTime
 import kotlin.math.roundToInt
 
 @Composable
@@ -26,7 +27,7 @@ fun WeatherCard(
     backgroundColor: Color,
     modifier: Modifier = Modifier
 ) {
-    state.weatherInfo?.currentWeatherData?.let { data ->
+    state.weatherInfo?.get(state.selectedDay)?.get(LocalDateTime.now().hour)?.let { data ->
         Card(
             backgroundColor = backgroundColor,
             shape = RoundedCornerShape(10.dp),
@@ -39,9 +40,11 @@ fun WeatherCard(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = stringResource(
+                    text = if(state.selectedDay == 0) stringResource(
                         id = R.string.weather_card_today_text,
-                        data.time.dayOfWeek.name),
+                        data.time.dayOfWeek.name)
+                    else
+                        data.time.dayOfWeek.name,
                     modifier = Modifier.align(Alignment.End),
                     color = Color.White
                 )
