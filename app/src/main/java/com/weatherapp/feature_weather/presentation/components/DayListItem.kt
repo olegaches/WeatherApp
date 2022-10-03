@@ -21,21 +21,22 @@ fun DayListItem(
     Card(
         modifier = Modifier
             .padding(2.dp)
-            .width(100.dp)
+            .width(86.dp)
             .selectable(
                 selected = true,
                 onClick = { onItemClick() }
             ),
         backgroundColor = if(isSelected)
             MaterialTheme.colors.secondary else MaterialTheme.colors.background,
-        border = BorderStroke(1.dp, MaterialTheme.colors.onBackground)
+        elevation = 10.dp
+//        border = BorderStroke(1.dp, MaterialTheme.colors.onBackground)
     ) {
         Text(
             modifier = Modifier.padding(8.dp),
             text = "${dateTime.dayOfWeek.name}\n${dateTime.month.name}\n${dateTime.dayOfMonth}",
             color = MaterialTheme.colors.onBackground,
             textAlign = TextAlign.Center,
-            fontSize = 14.sp,
+            fontSize = 12.sp,
             lineHeight = 20.sp,
         )
     }
